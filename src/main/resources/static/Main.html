@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins?preview.size=20">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>вантажні перевезення</title>
+</head>
+<body>
+   
+<header class="header">
+    <div class="container">
+      <div class="header__logo">
+      <img class="header__logo__name" src="images\logo.jpg">
+    </div>
+    <nav class="header__nav">
+      <ul class="header__menu">
+        <li class="header__item"><a href="#" class="header__link">Новини</a></li>
+        <li class="header__item"><a href="#" class="header__link">Про нас</a></li>
+        <li class="header__item"><a href="#" class="header__link">Контакти</a></li>     
+      </ul>
+    </nav>
+    </div>
+
+    <!--<div class="header__contact-button">
+      <a href="#" class="contact-button">Contact Us</a>
+    </div>-->
+    <div class="header__right">
+      <p class="header__text"><i class="fas fa-phone"></i>  +38(067) 987 - 65 - 84</p>
+      <div class="header__contact-button">
+        <a href="#" class="contact-button">зв'язатися з нами</a>
+      </div>
+    </div>
+  </header>
+  <!--MODAL WINDOW-->
+  <div class="form-modal">
+    <div class="modal-content">
+        <div class="content-wrapper">
+            <div class="close"> + </div>
+            <form>
+              <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Ім'я">
+              </div>
+
+              <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" placeholder="Номер телефону">
+              </div>
+
+                <button class="submit btn"> Прорахувати </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--carusel-->
+<div class="carousel" duration="7000">
+  <ul tabindex="0">
+    <li id="c1_slide1"><div>Nice car number 1<br /><a href="https://www.google.com">текст1</a></div></li>  
+    <li id="c1_slide2"><div>Nice car number 2<br /><a href="https://www.google.com">текст2</a></div></li>  
+    <li id="c1_slide3"><div>Nice car number 3<br /><a href="https://www.google.com">текст3</a></div></li>  
+    <li id="c1_slide4"><div>Nice car number 4<br /><a href="https://www.google.com">текст4</a></div></li>  
+  </ul>
+  <ol>
+    <li><a href="#c1_slide1"></a></li>
+    <li><a href="#c1_slide2"></a></li>
+    <li><a href="#c1_slide3"></a></li>
+    <li><a href="#c1_slide4"></a></li>
+  </ol>
+  <div class="prev">&lsaquo;</div>
+  <div class="next">&rsaquo;</div>
+</div>
+<h2>Technique</h2>
+<p>The above is an unordened list with horizontal overflow set to auto, snap scrolling and hidden scrollbars. You can swipe the carousel with your finger on touch screens through native touch scroll. You can use the arrow keys on your keyboard to scroll the carousel (when the carousel has focus). The bullets are actually anchor links, which trigger a 'scroll-behaviour: smooth' scroll. The script uses a simple setInterval for autoplay which does not fire during hover and can be set on the carousel div in a custom attribute in milliseconds. Also checkout the <a href="https://codepen.io/joosts/pen/dyKRQZv" target="_top">Centered carousel with CSS scroll snap</a>.</p>
+
+<h2>Browser compatibility</h2>
+<p>The code is tested on the newest versions of Chrome, Firefox, Chrome mobile and Firefox mobile in april 2021. This code uses fairly new techniques, like scroll snapping. However, I expect this solution to degrade quite graceful. It even looks and works 'okay-ish' without javascript.</p>
+
+<h2>About the author</h2>
+<p>I am a <a href="https://www.usecue.com/">website performance expert</a> and for <a href="https://www.usecue.com/portfolio/poet-vermaat/">a project</a> I was looking for a <a href="https://www.usecue.com/blog/carousel-with-scroll-snap/">touch enabled carousel</a>. I could not find one that was minimal, so I created a basic responsive and touch-enabled carousel that weighs only 3kb (uncompressed and including CSS). This carousel is based on modern web technology and will not slow down (the rendering of) your page... and yes, that <a href="https://www.usecue.com/portfolio/poet-vermaat/">project link</a> is a link to a production website.</p>
+
+<h2>Credits</h2>
+<p>The approach is (partly) based on the 2019 scroll snap carousel from <a href="https://nolanlawson.com">Nolan Lawson</a>. The debounce function is written by <a href="https://gomakethings.com">Chris Ferdinandi</a>. The cat images are borrowed from <a href="https://www.pexels.com/">Pexels</a>.</p>
+
+<h2>License</h2>
+<p>WTFPL - This is a GPL-compatible permissive license most commonly used as a free software license. As a public domain like license, the WTFPL is essentially the same as dedication to the public domain. It allows redistribution and modification of the work under any terms. The title is an abbreviation of "Do What The Fuck You Want To Public License".</p>
+
+<p><br />Enjoy the code!<br /><br /><a href="https://www.usecue.com/">Joost van der Schee</a></p>
+
+<script>document.addEventListener('DOMContentLoaded', function() {
+    
+  const carousels = document.querySelectorAll('.carousel');
+  carousels.forEach(function( carousel ) {
+
+      const ele = carousel.querySelector('ul');
+      const amountvisible = Math.round(ele.offsetWidth/ele.querySelector('li:nth-child(1)').offsetWidth);
+      const bullets = carousel.querySelectorAll('ol li');
+      const slides = carousel.querySelectorAll('ul li');
+      const nextarrow = carousel.querySelector('.next');
+      const prevarrow = carousel.querySelector('.prev');
+
+      // Initialize the carousel
+      nextarrow.style.display = 'block';
+      prevarrow.style.display = 'block';
+      ele.scrollLeft = 0;
+      bullets[0].classList.add('selected');
+      slides[0].classList.add('selected');
+      if(amountvisible>1) {
+        var removeels = carousel.querySelectorAll('ol li:nth-last-child(-n + '+(amountvisible-1)+')');
+        removeels.forEach(function(removeel) {
+          removeel.remove();
+        });
+      }
+
+      const setSelected = function() {
+          bullets.forEach(function(bullet) {
+             bullet.classList.remove('selected');
+          });
+          slides.forEach(function(slide) {
+             slide.classList.remove('selected');
+          });
+          const scrolllength = carousel.querySelector('ul li:nth-child(2)').offsetLeft - carousel.querySelector('ul li:nth-child(1)').offsetLeft;
+          const nthchild = (Math.round((ele.scrollLeft/scrolllength)+1));
+          carousel.querySelector('ol li:nth-child('+nthchild+')').classList.add('selected'); 
+          carousel.querySelector('ul li:nth-child('+nthchild+')').classList.add('selected'); 
+          if(carousel.parentElement.parentElement.querySelector('.dynamictitle')) {
+              const title = carousel.querySelector('ul li:nth-child('+nthchild+') img').getAttribute('title'); 
+              if(title) carousel.parentElement.parentElement.querySelector('.dynamictitle').innerHTML = title;
+          }
+      }
+
+      const scrollTo = function(event) {
+          event.preventDefault();
+          ele.scrollLeft = ele.querySelector(this.getAttribute('href')).offsetLeft;
+      }
+      
+      const nextSlide = function() {
+          if(!carousel.querySelector('ol li:last-child').classList.contains('selected')) {
+              carousel.querySelector('ol li.selected').nextElementSibling.querySelector('a').click();
+          } else {
+              carousel.querySelector('ol li:first-child a').click();
+          }
+      }
+
+      const prevSlide = function() {
+          if(!carousel.querySelector('ol li:first-child').classList.contains('selected')) {
+              carousel.querySelector('ol li.selected').previousElementSibling.querySelector('a').click();
+          } else {
+              carousel.querySelector('ol li:last-child a').click();
+          }
+      }
+      
+      const setInteracted = function() {
+        ele.classList.add('interacted');
+      }
+          
+      // Attach the handlers
+      ele.addEventListener("scroll", debounce(setSelected));
+      ele.addEventListener("touchstart", setInteracted);
+      ele.addEventListener('keydown', function (e){
+          if(e.key == 'ArrowLeft') ele.classList.add('interacted');
+          if(e.key == 'ArrowRight') ele.classList.add('interacted');
+      });
+
+      nextarrow.addEventListener("click", nextSlide);
+      nextarrow.addEventListener("mousedown", setInteracted);
+      nextarrow.addEventListener("touchstart", setInteracted);
+
+      prevarrow.addEventListener("click", prevSlide);
+      prevarrow.addEventListener("mousedown", setInteracted);
+      prevarrow.addEventListener("touchstart", setInteracted);
+
+      bullets.forEach(function(bullet) {
+        bullet.querySelector('a').addEventListener('click', scrollTo);
+        bullet.addEventListener("mousedown", setInteracted);
+        bullet.addEventListener("touchstart", setInteracted);
+      });
+
+      //setInterval for autoplay
+      if(carousel.getAttribute('duration')) {
+        setInterval(function(){ 
+          if (ele != document.querySelector(".carousel:hover ul") && ele.classList.contains('interacted')==false) {
+            nextarrow.click();
+          }
+        }, carousel.getAttribute('duration'));
+      }
+    
+    
+  }); //end foreach
+
+}); //end onload
+
+
+
+/**
+* Debounce functions for better performance
+* (c) 2021 Chris Ferdinandi, MIT License, https://gomakethings.com
+* @param  {Function} fn The function to debounce
+*/
+function debounce (fn) {
+// Setup a timer
+let timeout;
+// Return a function to run debounced
+return function () {
+  // Setup the arguments
+  let context = this;
+  let args = arguments;
+  // If there's a timer, cancel it
+  if (timeout) {
+    window.cancelAnimationFrame(timeout);
+  }
+  // Setup the new requestAnimationFrame()
+  timeout = window.requestAnimationFrame(function () {
+    fn.apply(context, args);
+  });
+};
+}
+//send json data to back-end
+const data = {
+    name: "Имя пользователя",
+    phoneNumber: "Номер телефона"
+};
+
+fetch('/api/sendEmail', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+})
+    .then(response => response.json())
+    .then(data => {
+        // Обработка ответа от сервера
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+    });
+
+</script>
+
+<br /><br /><br /><br />
+  
+
+
+  <div class="main"></div>
+  <div class="main">
+    <div class="content-block">
+      <h2>Section 1</h2>
+      <p>Lorem ipsum dolor sit amet,<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </div>
+    <div class="content-block">
+      <h2>Section 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </div>
+    <div class="content-block">
+      <h2>Section 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </div>
+  </div>
+
+  <script>
+const signUp = document.querySelector(".contact-button");
+const modal = document.querySelector(".form-modal");
+const close = document.querySelector(".close");
+
+signUp.addEventListener("click",()=>{
+    modal.style.display = "flex";
+})
+
+close.addEventListener("click",()=>{
+    modal.style.display = "none";
+})
+  </script>
+  
+</body>
+</html>
