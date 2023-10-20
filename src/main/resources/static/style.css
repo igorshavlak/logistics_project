@@ -1,4 +1,4 @@
-/*тест гита*/
+
 /* Установите общие свойства для всех элементов */
 * {
   margin: 0; /* Убирает все внешние отступы */
@@ -290,7 +290,35 @@ textarea {
   border-radius: 5px; /* Радиус границ поля ввода */
 }
 
+/*вторая форма на главном экране*/
+.form-modal-on-main-window {
+  width: 27%;
+  height: 50%;
+  background-color: white; /* Меняем цвет фона */
+  padding: 20px; /* Добавляем отступы вокруг формы */
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  border-radius: 5px;
+}
 
+.modal-content-on-main-window {
+  width: 450px;
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+  border-radius: 15px;
+}
+/*текст над полями*/
+.form-heading h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-text {
+  text-align: center;
+  font-family: 'Poppins';
+}
 
 /* CAROUSEL CSS */
 /* Стили для карусели */
