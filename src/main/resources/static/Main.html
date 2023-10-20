@@ -41,18 +41,18 @@
     <div class="modal-content">
         <div class="content-wrapper">
             <div class="close"> + </div>
-            <form>
+            <form id = "form">
               <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Ім'я">
+                <input type="text" id = "name" placeholder="Ім'я">
               </div>
 
               <div class="input-group">
                 <i class="fas fa-phone"></i>
-                <input type="tel" placeholder="Номер телефону">
+                <input type="tel" id = "number" placeholder="Номер телефону">
               </div>
 
-                <button class="submit btn"> Прорахувати </button>
+                <button class="submit btn" type="submit"> Прорахувати </button>
             </form>
         </div>
     </div>
@@ -221,25 +221,31 @@ return function () {
 };
 }
 //send json data to back-end
-const data = {
-    name: "Имя пользователя",
-    phoneNumber: "Номер телефона"
-};
+document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const phoneNumber = document.getElementById("number").value;
 
-fetch('/api/sendEmail', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-})
-    .then(response => response.json())
-    .then(data => {
-        // Обработка ответа от сервера
+    const data = {
+        name: name,
+        phoneNumber: phoneNumber
+    };
+
+    fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     })
-    .catch(error => {
-        console.error('Ошибка:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            // Обработка ответа от сервера
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+});
 
 </script>
 

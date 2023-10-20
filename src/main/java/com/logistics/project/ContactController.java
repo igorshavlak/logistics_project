@@ -20,8 +20,7 @@ public class ContactController {
     @PostMapping("/sendEmail")
     public ResponseEntity<String> sendEmail(@RequestBody ContactForm contactForm) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("your-email@example.com");
-        message.setTo("recipient@example.com");
+        message.setTo("vdrabovskyi@gmail.com");
         message.setSubject("New Contact Request");
         message.setText("Name: " + contactForm.getName() + "\nPhone Number: " + contactForm.getPhoneNumber());
         emailSender.send(message);
