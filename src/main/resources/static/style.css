@@ -343,10 +343,17 @@ textarea {
 
 /*стиль для текста который находится на карусели слева от формы*/
 .text-style-on-carusel {
-  width: 100%;
-  font-family: 'Poppins';
-  font-size: 50px; /* Устанавливает размер шрифта для текста */
-  margin-left: 0;
+  position: absolute;
+  top: 30%;
+
+  left: 5%;
+  padding: 10px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 260%;
+  z-index: 10;
+  text-align: left;
+  text-shadow: 2px 2px 5px #000;
 }
 /* Стили для списка элементов карусели */
 .carousel ul {
@@ -474,11 +481,11 @@ textarea {
 }
 
 /* Стили для тегов p и h2 */
-/*p, h2 {
+p, h2 {
   margin: 15px auto; /* Внешние отступы */
-  /*padding: 0 15px; /* Внутренние отступы */
- /* max-width: 800px; /* Максимальная ширина */
-/*}*/
+  padding: 0 15px; /* Внутренние отступы */
+  max-width: 800px; /* Максимальная ширина */
+}
 
 /* Стили для тега h2 */
 h2 {
