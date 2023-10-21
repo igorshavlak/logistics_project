@@ -516,7 +516,7 @@ h2 {
   color:#637480;
 }
 
-<<<<<<< HEAD
+
 /* Стили для второй модальной формы */
 .success-modal {
   width: 100%; /* Ширина формы */
@@ -565,8 +565,10 @@ h2 {
 .table-price {
   border: 1px solid black;
   border-collapse: collapse;
-  margin-left: 5%;
-   width: 90%;
+  margin-left: 2%;
+   width: 95%;
+   margin-top: 40px;
+   margin-bottom: 60px;
 
  
 
@@ -582,19 +584,18 @@ th, td {
   background-color: #192638;
   border: 2px solid gray;
   color:#fff;
-  padding: 40px;
+  padding: 30px;
 
 }
 .main-tr td {
 
   border: 2px solid white;
   color:#fff;
-  padding:3%;
+  padding:2%;
  font-size: 150%;
   
 }
 
-=======
 /*секция с блоком текста МІЖНАРОДНІ ПЕРЕВЕЗЕННЯ - ОСНОВНІ ПЕРЕВАГИ*/
 /*класс для отступа какого-то блока*/
 .class-for-text-block{
@@ -605,10 +606,11 @@ th, td {
   margin-top: 100px;
   text-align: center;
   margin-bottom: 25px;
+  font-size:20px;
 }
 
 .subparagraph{
-  font-size: 30px;
+  font-size: 23px;
   margin-bottom: 20px;
   margin-left: 10px;
 
@@ -668,7 +670,6 @@ margin-left: 15px;
   }
 }
 /*конец футера*/
->>>>>>> f30504e16f8d2b5ee9fbde40bd8a4a33403ec445
 
 
 
