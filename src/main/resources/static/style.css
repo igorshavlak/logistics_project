@@ -345,7 +345,6 @@ textarea {
 .text-style-on-carusel {
   position: absolute;
   top: 30%;
-
   left: 5%;
   padding: 10px;
   color: white;
@@ -491,4 +490,37 @@ p, h2 {
 h2 {
   margin-top: 30px; /* Верхний отступ */
 }
+
+/* Фрагмент текста с картинкой*/
+.container-block_two {
+  display: flex;
+  margin-top: 10%;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.text-block {
+  flex: 1;
+  padding-left: 20px;
+  padding-top: 0;
+  box-sizing: border-box;
+  width: 60%;
+
+}
+
+.image {
+  flex: 1;
+
+  padding-top: 1.5%;
+}
+
+.img-text {
+  height: auto;
+  width: 100%;
+}
+.text-color
+{
+  color:#637480;
+}
+
 
