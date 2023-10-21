@@ -310,7 +310,7 @@ textarea {
   border-radius: 15px;
 }
 /*текст над полями*/
-.form-heading h2 {
+.form-heading  h2 {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
@@ -319,6 +319,8 @@ textarea {
   text-align: center;
   font-family: 'Poppins';
 }
+
+
 
 /* CAROUSEL CSS */
 /* Стили для карусели */
@@ -339,6 +341,13 @@ textarea {
   pointer-events: none; /* Отключает события мыши */
 }
 
+/*стиль для текста который находится на карусели слева от формы*/
+.text-style-on-carusel {
+  width: 100%;
+  font-family: 'Poppins';
+  font-size: 50px; /* Устанавливает размер шрифта для текста */
+  margin-left: 0;
+}
 /* Стили для списка элементов карусели */
 .carousel ul {
   overflow: auto; /* Прокрутка при переполнении */
@@ -356,7 +365,7 @@ textarea {
 
 /* Стили для отключения полосы прокрутки для Chrome, Safari и Opera */
 .carousel ul::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 /* Стили для каждого элемента списка в карусели */
@@ -465,11 +474,11 @@ textarea {
 }
 
 /* Стили для тегов p и h2 */
-p, h2 {
+/*p, h2 {
   margin: 15px auto; /* Внешние отступы */
-  padding: 0 15px; /* Внутренние отступы */
-  max-width: 800px; /* Максимальная ширина */
-}
+  /*padding: 0 15px; /* Внутренние отступы */
+ /* max-width: 800px; /* Максимальная ширина */
+/*}*/
 
 /* Стили для тега h2 */
 h2 {
