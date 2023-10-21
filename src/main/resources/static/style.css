@@ -130,7 +130,7 @@ a.button2:hover {
   text-decoration: none; /* Убирает подчеркивание текста кнопки */
   border-radius: 5px; /* Радиус границ */
   font-size: 20px; /* Размер шрифта */
-  font-family: 'Poppins'; /* Шрифт */
+  font-family: 'PT Sans Narrow'; /* Шрифт */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень кнопки */
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Анимация перехода */
 }
@@ -225,6 +225,7 @@ a.button2:hover {
 
 /* Стили для кнопки закрытия модальной формы */
 .close {
+  top:-40px;
   position: absolute; /* Абсолютное позиционирование */
   font-size: 30px; /* Размер шрифта */
   transform: rotate(45deg); /* Поворот на 45 градусов */
@@ -274,7 +275,8 @@ textarea {
 .input-group i {
   position: absolute; /* Абсолютное позиционирование */
   top: 10px; /* Отступ сверху */
-  left: 50px; /* Отступ слева */
+  left: 30px; /* Отступ слева */
+
   font-size: 18px; /* Размер шрифта */
   color: #111; /* Цвет шрифта */
   z-index: 0; /* Значение z-index для иконки */
@@ -292,7 +294,7 @@ textarea {
 
 /*вторая форма на главном экране*/
 .form-modal-on-main-window {
-  width: 27%;
+  width: 25%;
   height: 50%;
   background-color: white; /* Меняем цвет фона */
   padding: 20px; /* Добавляем отступы вокруг формы */
@@ -479,12 +481,7 @@ textarea {
   background-image: url(https://images.pexels.com/photos/2558605/pexels-photo-2558605.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1500);
 }
 
-/* Стили для тегов p и h2 */
-p, h2 {
-  margin: 15px auto; /* Внешние отступы */
-  padding: 0 15px; /* Внутренние отступы */
-  max-width: 800px; /* Максимальная ширина */
-}
+
 
 /* Стили для тега h2 */
 h2 {
@@ -522,5 +519,84 @@ h2 {
 {
   color:#637480;
 }
+
+/* Стили для второй модальной формы */
+.success-modal {
+  width: 100%; /* Ширина формы */
+  height: 100%; /* Высота формы */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 0; /* Отступ сверху */
+  left: 0; /* Отступ слева */
+  background-color: rgba(0, 0, 0, 0.8); /* Цвет фона формы */
+  display: none; /* Скрывает форму */
+  justify-content: center; /* Выравнивает элементы по горизонтали по центру */
+  align-items: center; /* Выравнивает элементы по вертикали по центру */
+  z-index: 20; /* Значение z-index для формы, чтобы она была выше первой модальной формы */
+}
+
+/* Стили для содержимого второй модальной формы */
+.success-modal .modal-content {
+  width: 250px; /* Ширина содержимого формы */
+  background-color: #fff; /* Цвет фона содержимого формы */
+  padding: 20px; /* Внутренние отступы */
+  position: relative; /* Относительное позиционирование */
+  animation: visible 1s 1; /* Анимация появления */
+  animation-fill-mode: forwards; /* Заполнение анимации вперед */
+  border-radius: 5px; /* Радиус границ */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Стили для кнопки закрытия второй модальной формы */
+/* Стили для кнопки закрытия второй модальной формы (вверху слева) */
+.success-modal .close-success {
+  position: absolute;
+  top: -10px; /* Отступ сверху */
+
+  cursor: pointer; /* Стиль указателя при наведении */
+  font-size: 18px; /* Размер шрифта */
+  color: #333; /* Цвет текста */
+}
+
+
+/* Стили для текста во второй модальной форме */
+.success-modal p {
+  font-size: 18px; /* Размер шрифта */
+  color: #333; /* Цвет текста */
+  margin: 0; /* Убирает внешние отступы сверху и снизу */
+}
+/*Таблица цен*/
+.table-price {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-left: 5%;
+   width: 90%;
+
+ 
+
+}
+th, td {
+  border: 1px solid gray;
+  padding: 20px;
+  text-align: center;
+  color: gray;
+ 
+}
+.main-tr {
+  background-color: #192638;
+  border: 2px solid gray;
+  color:#fff;
+  padding: 40px;
+
+}
+.main-tr td {
+
+  border: 2px solid white;
+  color:#fff;
+  padding:3%;
+ font-size: 150%;
+  
+}
+
+
 
 
